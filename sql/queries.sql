@@ -1,10 +1,17 @@
 SELECT *
-FROM dbo.Users
+FROM Users
 WHERE Age != 29;
 
 SELECT *
-FROM dbo.Products
+FROM Products
 WHERE Price < 5;
 
 SELECT *
-FROM dbo.Suppliers;
+FROM Suppliers;
+
+SELECT *
+FROM Products
+JOIN Suppliers ON Products.Supplier=Suppliers.id;
+
+SELECT *
+FROM ProductsCategories;
