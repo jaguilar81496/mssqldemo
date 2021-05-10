@@ -24,8 +24,8 @@ CREATE TABLE Suppliers
 CREATE TABLE StorageTemperatures
 (
         Name char(255) PRIMARY KEY
-	  , MinimumF decimal(4, 2) NOT NULL
-	  , MaximumF decimal(4, 2) NOT NULL
+	  , MinimumF decimal(9, 2) NOT NULL
+	  , MaximumF decimal(9, 2) NOT NULL
 );
 
 CREATE TABLE ProductsCategories
@@ -33,13 +33,13 @@ CREATE TABLE ProductsCategories
       Name char(255) NOT NULL PRIMARY KEY 
 );
 
-CREATE TABLE Products
-(
-      SKU char(255) NOT NULL PRIMARY KEY
-	, Supplier int FOREIGN KEY REFERENCES Suppliers(Id) NOT NULL 
-	, Category char(255) FOREIGN KEY REFERENCES ProductsCategories(name) 
-	, Temp char(255) FOREIGN KEY REFERENCES StorageTemperatures(name)
-	, Description char(255) NOT NULL UNIQUE 
-	, Price money NOT NULL
-);
+	CREATE TABLE Products
+	(
+		  SKU char(255) NOT NULL PRIMARY KEY
+		, Supplier int FOREIGN KEY REFERENCES Suppliers(Id) NOT NULL 
+		, Category char(255) FOREIGN KEY REFERENCES ProductsCategories(name) 
+		, Temp char(255) FOREIGN KEY REFERENCES StorageTemperatures(name)
+		, Description char(255) NOT NULL UNIQUE 
+		, Price money NOT NULL
+	);
 
