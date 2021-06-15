@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using Domain;
 
 namespace mssqlDemo
 {
@@ -24,8 +24,8 @@ namespace mssqlDemo
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     Console.WriteLine(string.Format("There are {0} columns", reader.FieldCount));
-                    
-                    
+
+                    //Supplier supplier = new Supplier(reader);
 
 
                     // while there is another record present
@@ -36,6 +36,9 @@ namespace mssqlDemo
                         count++;
                     }
                     Console.WriteLine(String.Format("There were {0} rows",count));
+
+                    
+
                 }
                 connection.Close();
             }

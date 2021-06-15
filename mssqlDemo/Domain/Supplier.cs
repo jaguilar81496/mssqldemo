@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Domain
 {
-    class Supplier
+    public class Supplier
     {
         public Supplier(int id, string businessName, string address, string phoneNumber)
         {
@@ -30,6 +30,13 @@ namespace Domain
             Id = dataReader.GetInt32(dataReader.GetOrdinal("Id"));
             
         }
+
+        /*public Supplier(SqlDataReader dataReader)
+        {
+            BusinessName = dataReader.GetInt32(dataReader.GetOrdinal("Business Name"));
+        } */
+
+      
 
         public int Id { get; set; }
         public string BusinessName { get; set; }
