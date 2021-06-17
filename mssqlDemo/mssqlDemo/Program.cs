@@ -36,8 +36,9 @@ namespace mssqlDemo
                         count++;
                     }
                     Console.WriteLine(String.Format("There were {0} rows",count));
+                    Console.WriteLine(String.Format("There were {0} rows", count));
 
-                    
+
 
                 }
                 connection.Close();
